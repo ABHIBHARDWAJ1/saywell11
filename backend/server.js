@@ -5,12 +5,18 @@ import rateLimit from 'express-rate-limit';
 import admin from 'firebase-admin';
 import { readFileSync } from 'fs';
 
+// Initialize Firebase Admin
 admin.initializeApp({ projectId: process.env.FIREBASE_PROJECT_ID });
+
 const app = express();
+
+// Yeh line sabhi origins se requests allow kar degi (CORS error fix)
+app.use(cors());
+
 app.set('trust proxy', 1);
-app.use(cors({ origin: (process.env.FRONTEND_URL || '*').split(',').map(s => s.trim()) }));
 app.use(express.json({ limit: '40kb' }));
 app.use(rateLimit({ windowMs: 60000, max: 60 }));
+
 // The public try-it demo has no login, so it gets a much stricter limit.
 const demoLimit = rateLimit({ windowMs: 60000, max: 6, message: { error: 'That is a lot of tries. Wait a minute, or create an account to keep going.' } });
 
