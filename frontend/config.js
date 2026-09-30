@@ -1,4 +1,4 @@
-export const API = 'http://localhost:8080'; // after Render deploy, replace with your Render URL
+const API_BASE_URL = "https://saywell11.onrender.com";
 export const CONTACT_EMAIL = ''; // put your support email here; the Contact link in Settings appears only when this is set
 export const firebaseConfig = {
   apiKey: "AIzaSyCIB7wn-1JM_KAJgDhTNLjWqC8haWbfVJw",
