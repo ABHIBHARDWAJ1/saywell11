@@ -1,0 +1,372 @@
+{
+ "dataset": {
+  "rows": 1000000,
+  "train": 659735,
+  "test": 340265,
+  "english": 503094,
+  "hinglish": 496906,
+  "labels": {
+   "judgment": 334395,
+   "blame": 291651,
+   "absolute": 337087,
+   "demand": 289544,
+   "vague_request": 289775,
+   "sarcasm": 289615,
+   "threat": 79228
+  },
+  "split": "Group split: test rows use sentence templates never seen in training."
+ },
+ "note": "The corpus is synthetic (composed from hand-written templates), so scores show how well each model learns these patterns, not accuracy on real chats. Replace or extend it with real labeled messages before claiming real-world accuracy.",
+ "deployed": "Logistic Regression",
+ "models": [
+  {
+   "name": "Logistic Regression",
+   "train_rows": 659735,
+   "train_seconds": 11.3,
+   "macro_f1": 0.7111,
+   "micro_f1": 0.713,
+   "per_label": {
+    "judgment": {
+     "precision": 0.993,
+     "recall": 0.488,
+     "f1": 0.654,
+     "tn_fp_fn_tp": [
+      212746,
+      442,
+      65086,
+      61991
+     ]
+    },
+    "blame": {
+     "precision": 0.958,
+     "recall": 0.516,
+     "f1": 0.671,
+     "tn_fp_fn_tp": [
+      220020,
+      2650,
+      56917,
+      60678
+     ]
+    },
+    "absolute": {
+     "precision": 1.0,
+     "recall": 0.636,
+     "f1": 0.777,
+     "tn_fp_fn_tp": [
+      212056,
+      0,
+      46723,
+      81486
+     ]
+    },
+    "demand": {
+     "precision": 1.0,
+     "recall": 0.504,
+     "f1": 0.671,
+     "tn_fp_fn_tp": [
+      223447,
+      26,
+      57873,
+      58919
+     ]
+    },
+    "vague_request": {
+     "precision": 1.0,
+     "recall": 0.683,
+     "f1": 0.811,
+     "tn_fp_fn_tp": [
+      222736,
+      25,
+      37289,
+      80215
+     ]
+    },
+    "sarcasm": {
+     "precision": 1.0,
+     "recall": 0.507,
+     "f1": 0.673,
+     "tn_fp_fn_tp": [
+      223375,
+      0,
+      57623,
+      59267
+     ]
+    },
+    "threat": {
+     "precision": 1.0,
+     "recall": 0.563,
+     "f1": 0.721,
+     "tn_fp_fn_tp": [
+      303782,
+      0,
+      15933,
+      20550
+     ]
+    }
+   }
+  },
+  {
+   "name": "Decision Tree",
+   "train_rows": 60000,
+   "train_seconds": 5.3,
+   "macro_f1": 0.6218,
+   "micro_f1": 0.6255,
+   "per_label": {
+    "judgment": {
+     "precision": 0.684,
+     "recall": 0.489,
+     "f1": 0.57,
+     "tn_fp_fn_tp": [
+      184490,
+      28698,
+      64951,
+      62126
+     ]
+    },
+    "blame": {
+     "precision": 0.557,
+     "recall": 0.655,
+     "f1": 0.602,
+     "tn_fp_fn_tp": [
+      161372,
+      61298,
+      40561,
+      77034
+     ]
+    },
+    "absolute": {
+     "precision": 0.999,
+     "recall": 0.473,
+     "f1": 0.642,
+     "tn_fp_fn_tp": [
+      212021,
+      35,
+      67570,
+      60639
+     ]
+    },
+    "demand": {
+     "precision": 0.894,
+     "recall": 0.522,
+     "f1": 0.659,
+     "tn_fp_fn_tp": [
+      216242,
+      7231,
+      55814,
+      60978
+     ]
+    },
+    "vague_request": {
+     "precision": 0.995,
+     "recall": 0.511,
+     "f1": 0.675,
+     "tn_fp_fn_tp": [
+      222439,
+      322,
+      57473,
+      60031
+     ]
+    },
+    "sarcasm": {
+     "precision": 0.966,
+     "recall": 0.491,
+     "f1": 0.652,
+     "tn_fp_fn_tp": [
+      221377,
+      1998,
+      59450,
+      57440
+     ]
+    },
+    "threat": {
+     "precision": 0.644,
+     "recall": 0.484,
+     "f1": 0.553,
+     "tn_fp_fn_tp": [
+      294016,
+      9766,
+      18822,
+      17661
+     ]
+    }
+   }
+  },
+  {
+   "name": "Random Forest",
+   "train_rows": 60000,
+   "train_seconds": 23.8,
+   "macro_f1": 0.6476,
+   "micro_f1": 0.6763,
+   "per_label": {
+    "judgment": {
+     "precision": 0.979,
+     "recall": 0.463,
+     "f1": 0.629,
+     "tn_fp_fn_tp": [
+      211953,
+      1235,
+      68253,
+      58824
+     ]
+    },
+    "blame": {
+     "precision": 0.999,
+     "recall": 0.573,
+     "f1": 0.728,
+     "tn_fp_fn_tp": [
+      222634,
+      36,
+      50215,
+      67380
+     ]
+    },
+    "absolute": {
+     "precision": 1.0,
+     "recall": 0.595,
+     "f1": 0.746,
+     "tn_fp_fn_tp": [
+      212056,
+      0,
+      51908,
+      76301
+     ]
+    },
+    "demand": {
+     "precision": 0.999,
+     "recall": 0.504,
+     "f1": 0.67,
+     "tn_fp_fn_tp": [
+      223441,
+      32,
+      57875,
+      58917
+     ]
+    },
+    "vague_request": {
+     "precision": 0.998,
+     "recall": 0.502,
+     "f1": 0.668,
+     "tn_fp_fn_tp": [
+      222654,
+      107,
+      58535,
+      58969
+     ]
+    },
+    "sarcasm": {
+     "precision": 1.0,
+     "recall": 0.507,
+     "f1": 0.673,
+     "tn_fp_fn_tp": [
+      223375,
+      0,
+      57626,
+      59264
+     ]
+    },
+    "threat": {
+     "precision": 1.0,
+     "recall": 0.265,
+     "f1": 0.419,
+     "tn_fp_fn_tp": [
+      303782,
+      0,
+      26828,
+      9655
+     ]
+    }
+   }
+  },
+  {
+   "name": "Neural Network (MLP)",
+   "train_rows": 60000,
+   "train_seconds": 11.2,
+   "macro_f1": 0.742,
+   "micro_f1": 0.7549,
+   "per_label": {
+    "judgment": {
+     "precision": 0.995,
+     "recall": 0.559,
+     "f1": 0.716,
+     "tn_fp_fn_tp": [
+      212838,
+      350,
+      55999,
+      71078
+     ]
+    },
+    "blame": {
+     "precision": 0.852,
+     "recall": 0.543,
+     "f1": 0.663,
+     "tn_fp_fn_tp": [
+      211553,
+      11117,
+      53719,
+      63876
+     ]
+    },
+    "absolute": {
+     "precision": 1.0,
+     "recall": 0.918,
+     "f1": 0.957,
+     "tn_fp_fn_tp": [
+      212056,
+      0,
+      10521,
+      117688
+     ]
+    },
+    "demand": {
+     "precision": 0.999,
+     "recall": 0.539,
+     "f1": 0.7,
+     "tn_fp_fn_tp": [
+      223430,
+      43,
+      53822,
+      62970
+     ]
+    },
+    "vague_request": {
+     "precision": 0.957,
+     "recall": 0.636,
+     "f1": 0.764,
+     "tn_fp_fn_tp": [
+      219391,
+      3370,
+      42827,
+      74677
+     ]
+    },
+    "sarcasm": {
+     "precision": 1.0,
+     "recall": 0.507,
+     "f1": 0.673,
+     "tn_fp_fn_tp": [
+      223375,
+      0,
+      57623,
+      59267
+     ]
+    },
+    "threat": {
+     "precision": 0.999,
+     "recall": 0.563,
+     "f1": 0.72,
+     "tn_fp_fn_tp": [
+      303764,
+      18,
+      15933,
+      20550
+     ]
+    }
+   }
+  }
+ ],
+ "regression": {
+  "name": "Ridge Regression (tension score)",
+  "mae": 0.2143,
+  "r2": -0.14
+ }
+}
