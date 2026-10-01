@@ -1,7 +1,7 @@
 /* SAYWELL extension: shared settings + helpers (loaded by popup.html and background.js).
    After you deploy: set API to your Render URL and WEB to your Vercel URL, and add the same API URL to host_permissions in manifest.json. */
 self.SW = (() => {
-  const API = 'http://localhost:8080', WEB = 'http://localhost:3000';
+  const API = 'https://saywell11.onrender.com', WEB = 'https://saywell11.vercel.app/';
   const N = { judgment: 'Judgment', blame: 'Blame', absolute: 'Absolute language', demand: 'Demand', vague_request: 'Unclear request', sarcasm: 'Possible sarcasm' };
   const H = {
     judgment: 'Describes what someone is, not what happened.', blame: 'Hands the cause of a feeling to the other person.', absolute: 'Turns one moment into a rule.',
